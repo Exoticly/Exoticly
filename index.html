@@ -34,13 +34,14 @@ h1 {
     position: relative;
 }
 
-/* Floating subtitle under header */
+/* Subtitle floating attached to header */
 .subtitle {
-    font-size: 1.3rem;
-    color: #ccc;
-    margin-top: 0.3rem;
-    text-shadow: 0 0 3px #fff;
-    animation: floatSubtitle 4s ease-in-out infinite;
+    font-size: 1.6rem;
+    font-weight: 900; /* thicker */
+    color: #fff;
+    margin-top: 0.2rem;
+    text-shadow: 0 0 4px #fff;
+    animation: floatSubtitle 6s ease-in-out infinite;
 }
 
 @keyframes float {
@@ -100,7 +101,7 @@ p {
     opacity: 0.4;
 }
 
-/* Media links with PNG logos */
+/* Media logos as pure HTML/CSS circles for placeholder simplicity */
 .socials {
     display: flex;
     align-items: center;
@@ -115,41 +116,44 @@ p {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 8px;
-    transition: color 0.3s ease;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #444;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.socials a:hover { color: #ff4f5a; }
+.socials a:hover { transform: scale(1.2); background-color: #ff4f5a; }
 
 .socials .pipe {
     color: #666;
     user-select: none;
 }
 
-.socials img {
-    width: 24px;
-    height: 24px;
-}
-
+/* Bomb in Wingdings style: circle with curved line */
 .bomb {
+    position: relative;
     width: 20px;
     height: 20px;
-    background: #333;
+    background-color: #333;
     border-radius: 50%;
-    position: relative;
 }
 
 .bomb::after {
     content: '';
     position: absolute;
+    width: 10px;
+    height: 4px;
+    border: 2px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
     top: -8px;
-    left: 50%;
-    width: 2px;
-    height: 6px;
-    background: #666;
-    transform: translateX(-50%);
-    border-radius: 1px;
+    left: 5px;
+    border-radius: 2px;
 }
+
 </style>
 </head>
 <body>
@@ -157,22 +161,15 @@ p {
 <h1>Exoticly ©</h1>
 <div class="subtitle">Fun Free Fast</div>
 
-<p>Welcome to your tech playground 😎<br>
-I create code experiments, indie projects like FADED, and tools that are entirely your own. Hands off 👀</p>
+<p>Welcome to Exoticly, our company where we build code, tools & indie games.</p>
 
 <div class="section-title">Our media:</div>
 <div class="socials">
-    <a href="https://www.tiktok.com/@exoticly_company" target="_blank">
-        <img src="images/tiktok.png" alt="TikTok">
-    </a>
+    <a href="https://www.tiktok.com/@exoticly_company" target="_blank"></a>
     <span class="pipe">|</span>
-    <a href="https://x.com/exoticly_c" target="_blank">
-        <img src="images/x.png" alt="X">
-    </a>
+    <a href="https://x.com/exoticly_c" target="_blank"></a>
     <span class="pipe">|</span>
-    <a href="https://youtube.com/@exoticly_c" target="_blank">
-        <img src="images/youtube.png" alt="YouTube">
-    </a>
+    <a href="https://youtube.com/@exoticly_c" target="_blank"></a>
 </div>
 
 <div class="project-title">Newest Project: FADED</div>
@@ -187,4 +184,4 @@ FADED is an Undertale-inspired 2D pixel RPG story game currently in early develo
 </div>
 
 </body>
-
+</html>
