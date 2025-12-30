@@ -1,162 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exoticly ©</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-papnTfG7nJ+1J8Zs6v+KcB6g7eT+v2QdNXeZ2hIw1XOo/2J2q5e5sVGk8VH66/6l7Xn+G8z5j14R+u6xG++5mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            text-align: center;
-            transition: all 0.3s ease;
-            overflow-x: hidden;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exoticly ©</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
 
-        /* Floating header */
-        h1 {
-            font-size: 3rem;
-            margin: 3rem 0 2rem 0;
-            font-weight: 700;
-            color: #fff; /* pure white */
-            text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
-            animation: float 6s ease-in-out infinite;
-        }
+/* Floating header */
+h1 {
+    font-size: 3rem;
+    margin: 4rem 0 0.5rem 0;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+}
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-10px) translateX(5px); }
-            50% { transform: translateY(10px) translateX(-5px); }
-            75% { transform: translateY(-5px) translateX(10px); }
-        }
+/* Floating subtitle under header */
+.subtitle {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-top: 0.3rem;
+    text-shadow: 0 0 3px #fff;
+    animation: floatSubtitle 4s ease-in-out infinite;
+}
 
-        p {
-            font-size: 1.5rem;
-            margin: 1rem 0 3rem 0;
-            font-weight: 400;
-            color: #ccc;
-            max-width: 700px;
-            line-height: 2rem;
-        }
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-10px) translateX(5px); }
+    50% { transform: translateY(10px) translateX(-5px); }
+    75% { transform: translateY(-5px) translateX(10px); }
+}
 
-        ul {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0 3rem 0;
-        }
+@keyframes floatSubtitle {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-6px) translateX(2px); }
+    50% { transform: translateY(6px) translateX(-2px); }
+    75% { transform: translateY(-3px) translateX(3px); }
+}
 
-        li {
-            font-size: 1.2rem;
-            margin: 12px 0;
-            color: #eee;
-        }
+@keyframes fadeIn { to { opacity: 1; } }
 
-        li:hover {
-            color: #ff4f5a;
-        }
+p {
+    font-size: 1.5rem;
+    margin: 1rem 0 3rem 0;
+    color: #ccc;
+    max-width: 700px;
+    line-height: 2rem;
+}
 
-        /* Section titles */
-        .section-title {
-            font-size: 2rem;
-            margin: 3rem 0 1rem 0;
-            color: #fff;
-            letter-spacing: 1px;
-        }
+.section-title {
+    font-size: 2rem;
+    margin: 3rem 0 1rem 0;
+    color: #fff;
+    letter-spacing: 1px;
+}
 
-        /* Media links */
-        .socials {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 25px;
-            font-size: 1.3rem;
-            margin-bottom: 4rem;
-        }
+.project-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
 
-        .socials a {
-            color: #fff;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            transition: color 0.3s ease;
-        }
+.project-desc {
+    font-size: 1.2rem;
+    max-width: 650px;
+    color: #ccc;
+    margin-bottom: 6rem;
+    line-height: 1.8rem;
+}
 
-        .socials a:hover {
-            color: #ff4f5a;
-        }
+/* Wingdings secret at bottom */
+.wingdings {
+    font-family: 'Wingdings';
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-bottom: 6rem;
+    opacity: 0.4;
+}
 
-        .socials .pipe {
-            color: #666;
-            user-select: none;
-        }
+/* Media links with PNG logos */
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+}
 
-        /* Project section */
-        .project-title {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
+.socials a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
 
-        .project-desc {
-            font-size: 1.2rem;
-            max-width: 650px;
-            color: #ccc;
-            margin-bottom: 3rem;
-            line-height: 1.8rem;
-        }
+.socials a:hover { color: #ff4f5a; }
 
-        /* Wingdings secret names */
-        .wingdings {
-            font-family: 'Wingdings', sans-serif;
-            font-size: 2rem;
-            color: #fff;
-            display: flex;
-            gap: 80px;
-            margin-bottom: 4rem;
-            justify-content: center;
-        }
+.socials .pipe {
+    color: #666;
+    user-select: none;
+}
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-    </style>
+.socials img {
+    width: 24px;
+    height: 24px;
+}
+
+.bomb {
+    width: 20px;
+    height: 20px;
+    background: #333;
+    border-radius: 50%;
+    position: relative;
+}
+
+.bomb::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 2px;
+    height: 6px;
+    background: #666;
+    transform: translateX(-50%);
+    border-radius: 1px;
+}
+</style>
 </head>
 <body>
-    <h1>Exoticly ©</h1>
-    <p>Welcome to my tech playground 😎<br>
-       I craft code experiments, indie projects like FADED, and tools that are completely my own. Hands off 👀</p>
 
-    <div class="section-title">Our media:</div>
-    <div class="socials">
-        <a href="https://www.tiktok.com/@exoticly_company" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok" width="24"> TikTok</a>
-        <span class="pipe">|</span>
-        <a href="https://x.com/exoticly_c" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="X" width="24"> X</a>
-        <span class="pipe">|</span>
-        <a href="https://youtube.com/@exoticly_c" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube" width="24"> YouTube</a>
-    </div>
+<h1>Exoticly ©</h1>
+<div class="subtitle">Fun Free Fast</div>
 
-    <div class="project-title">Newest Project: FADED</div>
-    <div class="project-desc">
-        FADED is an Undertale-inspired 2D pixel RPG story game currently in early development. Explore unique characters and immersive storytelling in a world that’s entirely my own.
-    </div>
+<p>Welcome to your tech playground 😎<br>
+I create code experiments, indie projects like FADED, and tools that are entirely your own. Hands off 👀</p>
 
-    <div class="wingdings">
-        <span>MONO</span>
-        <span>TOTO</span>
-        <span>EXO</span>
-    </div>
+<div class="section-title">Our media:</div>
+<div class="socials">
+    <a href="https://www.tiktok.com/@exoticly_company" target="_blank">
+        <img src="images/tiktok.png" alt="TikTok">
+    </a>
+    <span class="pipe">|</span>
+    <a href="https://x.com/exoticly_c" target="_blank">
+        <img src="images/x.png" alt="X">
+    </a>
+    <span class="pipe">|</span>
+    <a href="https://youtube.com/@exoticly_c" target="_blank">
+        <img src="images/youtube.png" alt="YouTube">
+    </a>
+</div>
+
+<div class="project-title">Newest Project: FADED</div>
+<div class="project-desc">
+FADED is an Undertale-inspired 2D pixel RPG story game currently in early development. Explore unique characters and immersive storytelling in a world that’s entirely your own.
+</div>
+
+<div class="wingdings">
+    <span>❄︎⚐︎❄︎⚐︎</span>
+    <span><span class="bomb"></span>⚐︎☠︎⚐︎</span>
+    <span>☜︎✠︎⚐︎</span>
+</div>
+
 </body>
 </html>
