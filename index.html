@@ -37,7 +37,7 @@ h1 {
 /* Subtitle floating attached to header */
 .subtitle {
     font-size: 1.6rem;
-    font-weight: 900; /* thicker */
+    font-weight: 900;
     color: #fff;
     margin-top: 0.2rem;
     text-shadow: 0 0 4px #fff;
@@ -101,7 +101,7 @@ p {
     opacity: 0.4;
 }
 
-/* Media logos as pure HTML/CSS circles for placeholder simplicity */
+/* Media links */
 .socials {
     display: flex;
     align-items: center;
@@ -116,44 +116,40 @@ p {
     text-decoration: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: #444;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    gap: 6px;
+    transition: color 0.3s ease;
 }
 
-.socials a:hover { transform: scale(1.2); background-color: #ff4f5a; }
+.socials a:hover { color: #ff4f5a; }
 
 .socials .pipe {
     color: #666;
     user-select: none;
 }
 
-/* Bomb in Wingdings style: circle with curved line */
-.bomb {
+/* YouTube icon with white rounded triangle and black ▸ */
+.yt-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+    display: inline-block;
     position: relative;
-    width: 20px;
-    height: 20px;
-    background-color: #333;
-    border-radius: 50%;
 }
 
-.bomb::after {
-    content: '';
+.yt-icon::after {
+    content: '▸';
+    color: #000;
     position: absolute;
-    width: 10px;
-    height: 4px;
-    border: 2px solid #fff;
-    border-top: none;
-    border-right: none;
-    transform: rotate(-45deg);
-    top: -8px;
-    left: 5px;
-    border-radius: 2px;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
 }
-
 </style>
 </head>
 <body>
@@ -165,11 +161,11 @@ p {
 
 <div class="section-title">Our media:</div>
 <div class="socials">
-    <a href="https://www.tiktok.com/@exoticly_company" target="_blank"></a>
+    <a href="https://www.tiktok.com/@exoticly_company" target="_blank">♪ TikTok</a>
     <span class="pipe">|</span>
-    <a href="https://x.com/exoticly_c" target="_blank"></a>
+    <a href="https://x.com/exoticly_c" target="_blank">𝕏 Twitter</a>
     <span class="pipe">|</span>
-    <a href="https://youtube.com/@exoticly_c" target="_blank"></a>
+    <a href="https://youtube.com/@exoticly_c" target="_blank"><span class="yt-icon"></span></a>
 </div>
 
 <div class="project-title">Newest Project: FADED</div>
@@ -179,7 +175,7 @@ FADED is an Undertale-inspired 2D pixel RPG story game currently in early develo
 
 <div class="wingdings">
     <span>❄︎⚐︎❄︎⚐︎</span>
-    <span><span class="bomb"></span>⚐︎☠︎⚐︎</span>
+    <span>💣⚐︎☠︎⚐︎</span>
     <span>☜︎✠︎⚐︎</span>
 </div>
 
