@@ -163,10 +163,12 @@ p {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
 
 .reddit-link:hover { color: #ff4500; }
-
 </style>
 </head>
 <body>
@@ -185,8 +187,24 @@ p {
         <span class="pipe">|</span>
         <a href="https://youtube.com/@exoticly_c" target="_blank"><span class="yt-icon"></span></a>
     </div>
-    <!-- Reddit link under Twitter with a bit of spacing -->
-    <a class="reddit-link" href="https://www.reddit.com/user/Exoticly_company/" target="_blank">Reddit</a>
+    <!-- Reddit link with mini logo -->
+    <a class="reddit-link" href="https://www.reddit.com/user/Exoticly_company/" target="_blank">
+        <svg width="20" height="20" viewBox="-10 -10 20 20">
+            <!-- Head: horizontal ellipse -->
+            <ellipse cx="0" cy="0" rx="8" ry="6" fill="#FF4500" />
+            <!-- Eyes -->
+            <circle cx="-3" cy="0" r="1.2" fill="#fff" />
+            <circle cx="3" cy="0" r="1.2" fill="#fff" />
+            <!-- Ears -->
+            <circle cx="-8" cy="0" r="1" fill="#FF4500" />
+            <circle cx="8" cy="0" r="1" fill="#FF4500" />
+            <!-- Antenna -->
+            <line x1="0" y1="-6" x2="0" y2="-9" stroke="#FF4500" stroke-width="1"/>
+            <line x1="0" y1="-9" x2="2.6" y2="-10.6" stroke="#FF4500" stroke-width="1"/>
+            <circle cx="2.6" cy="-10.6" r="1" fill="#FF4500"/>
+        </svg>
+        Reddit
+    </a>
 </div>
 
 <div class="project-title">Newest Project: FADED</div>
