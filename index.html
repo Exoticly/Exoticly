@@ -3,29 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exoticly ©</title>
 
-<!-- SEO Stuff -->
-<title>Exoticly — Indie Game Studio & Tools</title>
-<meta name="description" content="Exoticly is an indie game studio building code, tools & pixel‑art games like FADED. Follow our socials and game development journey!">
-<meta name="robots" content="index, follow">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
 
-<!-- Canonical URL -->
-<link rel="canonical" href="https://exoticly.github.io/Exoticly/">
-
-<!-- Open Graph (no image) -->
-<meta property="og:title" content="Exoticly — Indie Game Studio & Tools">
-<meta property="og:description" content="Indie game studio creating code, tools & FADED, a pixel‑art RPG. Check out our socials and projects!">
-<meta property="og:url" content="https://exoticly.github.io/Exoticly/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Exoticly">
-
-<!-- Twitter Card (no image) -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Exoticly — Indie Game Studio & Tools">
-<meta name="twitter:description" content="Indie game studio building pixel‑art games like FADED and cool tools.">
-
-<!-- Fonts & CSS -->
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
 body {
     margin: 0;
@@ -36,85 +17,232 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
     min-height: 100vh;
     text-align: center;
-    overflow-x: hidden;
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
+
+@keyframes fadeIn { to { opacity: 1; } }
+
+/* Header */
 h1 {
     font-size: 3rem;
-    margin: 4rem 0 0.5rem 0;
-    font-weight: 700;
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fff;
+    margin-top: 4rem;
+    text-shadow: 0 0 10px #fff;
     animation: float 6s ease-in-out infinite;
-    position: relative;
 }
+
 .subtitle {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 900;
-    color: #fff;
-    margin-top: 0.2rem;
-    text-shadow: 0 0 4px #fff;
-    animation: floatSubtitle 6s ease-in-out infinite;
+    margin-top: 0.3rem;
+    animation: float 6s ease-in-out infinite reverse;
 }
-@keyframes float {0%,100%{transform:translateY(0) translateX(0);}25%{transform:translateY(-10px) translateX(5px);}50%{transform:translateY(10px) translateX(-5px);}75%{transform:translateY(-5px) translateX(10px);}}
-@keyframes floatSubtitle {0%,100%{transform:translateY(0) translateX(0);}25%{transform:translateY(-6px) translateX(2px);}50%{transform:translateY(6px) translateX(-2px);}75%{transform:translateY(-3px) translateX(3px);}}
-@keyframes fadeIn { to { opacity: 1; } }
-p { font-size: 1.5rem; margin: 1rem 0 3rem 0; color: #ccc; max-width: 700px; line-height: 2rem; }
-.section-title { font-size: 2rem; margin: 3rem 0 1rem 0; color: #fff; letter-spacing: 1px; }
-.project-title { font-size: 1.8rem; margin-bottom: 0.5rem; color: #fff; }
-.project-desc { font-size: 1.2rem; max-width: 650px; color: #ccc; margin-bottom: 6rem; line-height: 1.8rem; }
-.wingdings { font-family: 'Wingdings'; font-size: 2rem; color: #fff; display: flex; justify-content: center; gap: 60px; margin-bottom: 6rem; opacity: 0.4; }
-.wingdings .bomb { font-size: 1.4rem; }
-.socials { display: flex; flex-direction: column; align-items: center; font-size: 1.3rem; margin-bottom: 4rem; }
-.social-row { display: flex; align-items: center; gap: 25px; margin-bottom: 5px; }
-.social-row a { color: #fff; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.3s ease; }
-.social-row a:hover { color: #ff4f5a; }
-.socials .pipe { color: #666; user-select: none; }
-.yt-icon { width: 36px; height: 24px; background-color: #fff; border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; position: relative; }
-.yt-icon::after { content: '▸'; color: #000; font-size: 14px; position: absolute; }
-.reddit-link { font-size: 1.3rem; color: #fff; text-decoration: none; transition: color 0.3s ease; display: flex; align-items: center; gap: 6px; }
-.reddit-link:hover { color: #ff4500; }
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+p {
+    font-size: 1.4rem;
+    max-width: 700px;
+    color: #ccc;
+    margin: 1.5rem 0 3rem 0;
+}
+
+/* Section */
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Socials */
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 4rem;
+}
+
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 1.2rem;
+}
+
+.social-row a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.2s ease;
+}
+
+.social-row a:hover {
+    color: #ff4f5a;
+}
+
+.pipe {
+    color: #666;
+    user-select: none;
+}
+
+/* YouTube icon */
+.yt-icon {
+    width: 36px;
+    height: 24px;
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.yt-icon::after {
+    content: '▸';
+    color: #000;
+    font-size: 14px;
+}
+
+/* Reddit / Itch / LinkedIn row */
+.extra-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 1.15rem;
+}
+
+.extra-row a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.extra-row a:hover {
+    color: #ff4500;
+}
+
+/* LinkedIn icon */
+.li-icon {
+    width: 22px;
+    height: 22px;
+    background: #fff;
+    border-radius: 6px;
+    color: #000;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+/* Discord button */
+.discord-link {
+    margin-top: 6px;
+    font-size: 1.15rem;
+}
+
+.discord-link a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.discord-link a:hover {
+    color: #7289da;
+}
+
+/* Project */
+.project-title {
+    font-size: 1.8rem;
+    margin-top: 3rem;
+}
+
+.project-desc {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 650px;
+    line-height: 1.8rem;
+    margin-bottom: 5rem;
+}
+
+/* Wingdings */
+.wingdings {
+    font-family: Wingdings;
+    opacity: 0.4;
+    display: flex;
+    gap: 60px;
+    margin-bottom: 5rem;
+}
+
+.bomb {
+    font-size: 1.3rem;
+}
 </style>
 </head>
+
 <body>
 
 <h1>Exoticly ©</h1>
 <div class="subtitle">Fun Free Fast</div>
+
 <p>Welcome to Exoticly, our company where we build code, tools & indie games.</p>
 
 <div class="section-title">Our media:</div>
+
 <div class="socials">
+    <!-- Main row -->
     <div class="social-row">
         <a href="https://www.tiktok.com/@exoticly_company" target="_blank">♪ TikTok</a>
         <span class="pipe">|</span>
-        <a href="https://x.com/exoticlydev" target="_blank">𝕏 Twitter</a>
+        <a href="https://x.com/exoticly_c" target="_blank">𝕏 Twitter</a>
         <span class="pipe">|</span>
-        <a href="https://youtube.com/@exoticlydev" target="_blank"><span class="yt-icon"></span></a>
+        <a href="https://youtube.com/@exoticly_c" target="_blank"><span class="yt-icon"></span></a>
     </div>
 
-    <!-- Custom Reddit Icon -->
-    <a class="reddit-link" href="https://www.reddit.com/user/Exoticly_company/" target="_blank">
-        <svg width="20" height="20" viewBox="-10 -10 20 20">
-            <ellipse cx="0" cy="0" rx="8" ry="6" fill="#fff" />
-            <circle cx="-3" cy="0" r="1.2" fill="#000" />
-            <circle cx="3" cy="0" r="1.2" fill="#000" />
-            <circle cx="-8" cy="0" r="1.5" fill="#fff" />
-            <circle cx="8" cy="0" r="1.5" fill="#fff" />
-            <line x1="0" y1="-6" x2="0" y2="-9" stroke="#fff" stroke-width="1"/>
-            <line x1="0" y1="-9" x2="2.6" y2="-10.6" stroke="#fff" stroke-width="1"/>
-            <circle cx="2.6" cy="-10.6" r="1" fill="#fff"/>
-        </svg>
-        Reddit
-    </a>
+    <!-- Itch | Reddit | LinkedIn -->
+    <div class="extra-row">
+        <a href="https://exoticly.itch.io" target="_blank">itch.io</a>
+        <span class="pipe">│</span>
+
+        <a href="https://www.reddit.com/user/Exoticly_company/" target="_blank">
+            <svg width="18" height="18" viewBox="-10 -10 20 20">
+                <ellipse cx="0" cy="0" rx="8" ry="6" fill="#fff"/>
+                <circle cx="-3" cy="0" r="1.2" fill="#000"/>
+                <circle cx="3" cy="0" r="1.2" fill="#000"/>
+                <circle cx="-8" cy="0" r="1.7" fill="#fff"/>
+                <circle cx="8" cy="0" r="1.7" fill="#fff"/>
+                <line x1="0" y1="-6" x2="0" y2="-9" stroke="#fff" stroke-width="1"/>
+                <line x1="0" y1="-9" x2="2.6" y2="-10.6" stroke="#fff" stroke-width="1"/>
+                <circle cx="2.6" cy="-10.6" r="1" fill="#fff"/>
+            </svg>
+            Reddit
+        </a>
+
+        <span class="pipe">│</span>
+
+        <a href="https://www.linkedin.com/in/exoticly" target="_blank">
+            <span class="li-icon">in</span>
+            LinkedIn
+        </a>
+    </div>
+
+    <!-- Discord -->
+    <div class="discord-link">
+        <a href="https://discord.gg/DUJ3DJKR" target="_blank">Discord</a>
+    </div>
 </div>
 
 <div class="project-title">Newest Project: FADED</div>
 <div class="project-desc">
-FADED is an Undertale‑inspired 2D pixel RPG story game currently in early development. Explore unique characters and immersive storytelling in a world that’s entirely your own.
+FADED is an Undertale-inspired 2D pixel RPG story game currently in early development.
+Explore unique characters and immersive storytelling in a world that’s entirely your own.
 </div>
 
 <div class="wingdings">
