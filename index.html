@@ -109,14 +109,20 @@ p {
 /* Media links */
 .socials {
     display: flex;
+    flex-direction: column; /* allows Reddit link below Twitter */
     align-items: center;
-    justify-content: center;
-    gap: 25px;
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 4rem;
 }
 
-.socials a {
+.social-row {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 5px; /* spacing before Reddit link */
+}
+
+.social-row a {
     color: #fff;
     text-decoration: none;
     display: flex;
@@ -125,7 +131,7 @@ p {
     transition: color 0.3s ease;
 }
 
-.socials a:hover { color: #ff4f5a; }
+.social-row a:hover { color: #ff4f5a; }
 
 .socials .pipe {
     color: #666;
@@ -153,17 +159,13 @@ p {
 
 /* Reddit link styling */
 .reddit-link {
-    display: block;
-    margin-top: 10px;
     font-size: 1.3rem;
-    text-decoration: none;
     color: #fff;
+    text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.reddit-link:hover {
-    color: #ff4500; /* Reddit orange */
-}
+.reddit-link:hover { color: #ff4500; }
 
 </style>
 </head>
@@ -176,15 +178,16 @@ p {
 
 <div class="section-title">Our media:</div>
 <div class="socials">
-    <a href="https://www.tiktok.com/@exoticly_company" target="_blank">♪ TikTok</a>
-    <span class="pipe">|</span>
-    <a href="https://x.com/exoticly_c" target="_blank">𝕏 Twitter</a>
-    <span class="pipe">|</span>
-    <a href="https://youtube.com/@exoticly_c" target="_blank"><span class="yt-icon"></span></a>
+    <div class="social-row">
+        <a href="https://www.tiktok.com/@exoticly_company" target="_blank">♪ TikTok</a>
+        <span class="pipe">|</span>
+        <a href="https://x.com/exoticly_c" target="_blank">𝕏 Twitter</a>
+        <span class="pipe">|</span>
+        <a href="https://youtube.com/@exoticly_c" target="_blank"><span class="yt-icon"></span></a>
+    </div>
+    <!-- Reddit link under Twitter with a bit of spacing -->
+    <a class="reddit-link" href="https://www.reddit.com/user/Exoticly_company/" target="_blank">Reddit</a>
 </div>
-
-<!-- Reddit button below -->
-<a class="reddit-link" href="https://www.reddit.com/r/Exoticly_company" target="_blank">Reddit</a>
 
 <div class="project-title">Newest Project: FADED</div>
 <div class="project-desc">
