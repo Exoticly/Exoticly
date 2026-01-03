@@ -55,7 +55,7 @@ p {
     margin-bottom: 1rem;
 }
 
-/* --- SOCIALS --- */
+/* SOCIALS */
 .socials {
     display: flex;
     flex-direction: column;
@@ -78,7 +78,7 @@ a {
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
 }
 
 a:hover { color: #ff4f5a; }
@@ -90,7 +90,19 @@ a:hover { color: #ff4f5a; }
     user-select: none;
 }
 
-/* YouTube icon */
+/* Icons */
+.icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+}
+
+.icon.discord {
+    width: 26px;
+    height: 20px;
+}
+
+/* YouTube */
 .yt-icon {
     width: 36px;
     height: 24px;
@@ -120,7 +132,7 @@ a:hover { color: #ff4f5a; }
     font-size: 14px;
 }
 
-/* Discord */
+/* Discord row */
 .discord-link {
     display: flex;
     align-items: center;
@@ -172,44 +184,26 @@ a:hover { color: #ff4f5a; }
         <span class="pipe">│</span>
         <a href="https://x.com/exoticly_c" target="_blank">𝕏 Twitter</a>
         <span class="pipe">│</span>
-        <a href="https://youtube.com/@exoticly_c" target="_blank"><span class="yt-icon"></span></a>
+        <a href="https://youtube.com/@exoticly_c" target="_blank">
+            <span class="yt-icon"></span>
+        </a>
     </div>
 
     <!-- EXTRA -->
     <div class="extra-row">
-        <!-- itch.io -->
         <a href="https://exoticly.itch.io" target="_blank">
-            <svg width="22" height="22" viewBox="0 0 100 100">
-                <rect x="10" y="18" width="80" height="72" rx="14" fill="#fff"/>
-                <rect x="22" y="6" width="12" height="10" fill="#fff"/>
-                <rect x="44" y="6" width="12" height="10" fill="#fff"/>
-                <rect x="66" y="6" width="12" height="10" fill="#fff"/>
-                <rect x="30" y="55" width="40" height="25" fill="#000"/>
-                <polygon points="50,30 64,50 36,50" fill="#fff"/>
-            </svg>
+            <img src="assets/itch-io.svg" class="icon" alt="itch.io">
             itch.io
         </a>
 
         <span class="pipe">│</span>
 
-        <!-- reddit -->
         <a href="https://www.reddit.com/user/Exoticly_company/" target="_blank">
-            <svg width="20" height="20" viewBox="-10 -10 20 20">
-                <ellipse cx="0" cy="0" rx="8" ry="6" fill="#fff"/>
-                <circle cx="-3" cy="0" r="1.2" fill="#000"/>
-                <circle cx="3" cy="0" r="1.2" fill="#000"/>
-                <circle cx="-8" cy="0" r="2" fill="#fff"/>
-                <circle cx="8" cy="0" r="2" fill="#fff"/>
-                <line x1="0" y1="-6" x2="0" y2="-9" stroke="#fff" stroke-width="1"/>
-                <line x1="0" y1="-9" x2="3" y2="-11" stroke="#fff" stroke-width="1"/>
-                <circle cx="3" cy="-11" r="1" fill="#fff"/>
-            </svg>
             Reddit
         </a>
 
         <span class="pipe">│</span>
 
-        <!-- linkedin -->
         <a href="https://www.linkedin.com/in/exoticly" target="_blank">
             <span class="li-icon">in</span>
             LinkedIn
@@ -218,22 +212,7 @@ a:hover { color: #ff4f5a; }
 
     <!-- DISCORD -->
     <div class="discord-link">
-        <svg width="26" height="18" viewBox="0 0 100 60">
-            <path d="
-                M20 10 H80
-                Q90 10 90 20
-                V40
-                Q90 50 80 50
-                H20
-                Q10 50 10 40
-                V20
-                Q10 10 20 10
-            " fill="#fff"/>
-            <circle cx="38" cy="30" r="4" fill="#000"/>
-            <circle cx="62" cy="30" r="4" fill="#000"/>
-            <rect x="20" y="42" width="6" height="6" fill="#000"/>
-            <rect x="74" y="42" width="6" height="6" fill="#000"/>
-        </svg>
+        <img src="assets/discord.svg" class="icon discord" alt="Discord">
         <a href="https://discord.gg/DUJ3DJKR" target="_blank">Discord</a>
     </div>
 
