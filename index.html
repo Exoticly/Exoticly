@@ -12,7 +12,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #000;
+    background: #000;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,6 @@ body {
 
 @keyframes fadeIn { to { opacity: 1; } }
 
-/* Header */
 h1 {
     font-size: 3rem;
     margin-top: 4rem;
@@ -36,7 +35,6 @@ h1 {
 .subtitle {
     font-size: 1.4rem;
     font-weight: 900;
-    margin-top: 0.3rem;
     animation: float 6s ease-in-out infinite reverse;
 }
 
@@ -52,43 +50,43 @@ p {
     margin: 1.5rem 0 3rem 0;
 }
 
-/* Section */
 .section-title {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
-/* Socials */
+/* --- SOCIALS --- */
 .socials {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     margin-bottom: 4rem;
 }
 
-.social-row {
+.social-row,
+.extra-row {
     display: flex;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
     font-size: 1.2rem;
+    line-height: 1;
 }
 
-.social-row a {
+a {
     color: #fff;
     text-decoration: none;
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: color 0.2s ease;
 }
 
-.social-row a:hover {
-    color: #ff4f5a;
-}
+a:hover { color: #ff4f5a; }
 
 .pipe {
     color: #666;
+    font-size: 1.2rem;
+    line-height: 1;
     user-select: none;
 }
 
@@ -102,34 +100,13 @@ p {
     align-items: center;
     justify-content: center;
 }
-
 .yt-icon::after {
     content: '▸';
     color: #000;
     font-size: 14px;
 }
 
-/* Reddit / Itch / LinkedIn row */
-.extra-row {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    font-size: 1.15rem;
-}
-
-.extra-row a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.extra-row a:hover {
-    color: #ff4500;
-}
-
-/* LinkedIn icon */
+/* LinkedIn */
 .li-icon {
     width: 22px;
     height: 22px;
@@ -143,19 +120,13 @@ p {
     font-size: 14px;
 }
 
-/* Discord button */
+/* Discord */
 .discord-link {
-    margin-top: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-size: 1.15rem;
-}
-
-.discord-link a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.discord-link a:hover {
-    color: #7289da;
+    margin-top: 4px;
 }
 
 /* Project */
@@ -179,10 +150,7 @@ p {
     display: flex;
     gap: 60px;
     margin-bottom: 5rem;
-}
-
-.bomb {
-    font-size: 1.3rem;
+    font-size: 2rem;
 }
 </style>
 </head>
@@ -197,46 +165,78 @@ p {
 <div class="section-title">Our media:</div>
 
 <div class="socials">
-    <!-- Main row -->
+
+    <!-- MAIN -->
     <div class="social-row">
         <a href="https://www.tiktok.com/@exoticly_company" target="_blank">♪ TikTok</a>
-        <span class="pipe">|</span>
+        <span class="pipe">│</span>
         <a href="https://x.com/exoticly_c" target="_blank">𝕏 Twitter</a>
-        <span class="pipe">|</span>
+        <span class="pipe">│</span>
         <a href="https://youtube.com/@exoticly_c" target="_blank"><span class="yt-icon"></span></a>
     </div>
 
-    <!-- Itch | Reddit | LinkedIn -->
+    <!-- EXTRA -->
     <div class="extra-row">
-        <a href="https://exoticly.itch.io" target="_blank">itch.io</a>
+        <!-- itch.io -->
+        <a href="https://exoticly.itch.io" target="_blank">
+            <svg width="22" height="22" viewBox="0 0 100 100">
+                <rect x="10" y="18" width="80" height="72" rx="14" fill="#fff"/>
+                <rect x="22" y="6" width="12" height="10" fill="#fff"/>
+                <rect x="44" y="6" width="12" height="10" fill="#fff"/>
+                <rect x="66" y="6" width="12" height="10" fill="#fff"/>
+                <rect x="30" y="55" width="40" height="25" fill="#000"/>
+                <polygon points="50,30 64,50 36,50" fill="#fff"/>
+            </svg>
+            itch.io
+        </a>
+
         <span class="pipe">│</span>
 
+        <!-- reddit -->
         <a href="https://www.reddit.com/user/Exoticly_company/" target="_blank">
-            <svg width="18" height="18" viewBox="-10 -10 20 20">
+            <svg width="20" height="20" viewBox="-10 -10 20 20">
                 <ellipse cx="0" cy="0" rx="8" ry="6" fill="#fff"/>
                 <circle cx="-3" cy="0" r="1.2" fill="#000"/>
                 <circle cx="3" cy="0" r="1.2" fill="#000"/>
-                <circle cx="-8" cy="0" r="1.7" fill="#fff"/>
-                <circle cx="8" cy="0" r="1.7" fill="#fff"/>
+                <circle cx="-8" cy="0" r="2" fill="#fff"/>
+                <circle cx="8" cy="0" r="2" fill="#fff"/>
                 <line x1="0" y1="-6" x2="0" y2="-9" stroke="#fff" stroke-width="1"/>
-                <line x1="0" y1="-9" x2="2.6" y2="-10.6" stroke="#fff" stroke-width="1"/>
-                <circle cx="2.6" cy="-10.6" r="1" fill="#fff"/>
+                <line x1="0" y1="-9" x2="3" y2="-11" stroke="#fff" stroke-width="1"/>
+                <circle cx="3" cy="-11" r="1" fill="#fff"/>
             </svg>
             Reddit
         </a>
 
         <span class="pipe">│</span>
 
+        <!-- linkedin -->
         <a href="https://www.linkedin.com/in/exoticly" target="_blank">
             <span class="li-icon">in</span>
             LinkedIn
         </a>
     </div>
 
-    <!-- Discord -->
+    <!-- DISCORD -->
     <div class="discord-link">
+        <svg width="26" height="18" viewBox="0 0 100 60">
+            <path d="
+                M20 10 H80
+                Q90 10 90 20
+                V40
+                Q90 50 80 50
+                H20
+                Q10 50 10 40
+                V20
+                Q10 10 20 10
+            " fill="#fff"/>
+            <circle cx="38" cy="30" r="4" fill="#000"/>
+            <circle cx="62" cy="30" r="4" fill="#000"/>
+            <rect x="20" y="42" width="6" height="6" fill="#000"/>
+            <rect x="74" y="42" width="6" height="6" fill="#000"/>
+        </svg>
         <a href="https://discord.gg/DUJ3DJKR" target="_blank">Discord</a>
     </div>
+
 </div>
 
 <div class="project-title">Newest Project: FADED</div>
