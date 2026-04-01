@@ -17,7 +17,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
     text-align: center;
     opacity: 0;
     animation: fadeIn 1s forwards;
@@ -27,7 +26,7 @@ body {
 
 h1 {
     font-size: 3rem;
-    margin-top: 4rem;
+    margin-top: 3rem;
     text-shadow: 0 0 10px #fff;
     animation: float 6s ease-in-out infinite;
 }
@@ -44,10 +43,15 @@ h1 {
 }
 
 p {
-    font-size: 1.4rem;
-    max-width: 700px;
+    font-size: 1.2rem;
+    max-width: 800px;
     color: #ccc;
-    margin: 1.5rem 0 3rem 0;
+    margin: 1rem 0;
+}
+
+.section {
+    margin: 3rem 0;
+    max-width: 900px;
 }
 
 .section-title {
@@ -55,92 +59,74 @@ p {
     margin-bottom: 1rem;
 }
 
-/* --- SOCIALS --- */
+/* socials */
 .socials {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 14px;
-    margin-bottom: 4rem;
+    margin-top: 2rem;
 }
 
-.social-row,
-.extra-row {
+.social-row, .extra-row {
     display: flex;
-    align-items: center;
     gap: 14px;
-    font-size: 1.2rem;
-    line-height: 1;
+    align-items: center;
+    justify-content: center;
 }
 
 a {
     color: #fff;
     text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 6px;
 }
 
-a:hover { color: #ff4f5a; }
+a:hover {
+    color: #ff4f5a;
+}
 
 .pipe {
     color: #666;
-    font-size: 1.2rem;
-    line-height: 1;
-    user-select: none;
 }
 
-/* YouTube icon */
-.yt-icon {
-    width: 36px;
-    height: 24px;
-    background: #fff;
-    border-radius: 6px;
+/* product checks */
+.checks {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.yt-icon::after {
-    content: '▸';
-    color: #000;
-    font-size: 14px;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
-/* LinkedIn */
-.li-icon {
-    width: 22px;
-    height: 22px;
-    background: #fff;
-    border-radius: 6px;
-    color: #000;
+.check {
+    font-size: 1.2rem;
+}
+
+.check-title {
     font-weight: 900;
+    font-size: 1.4rem;
+}
+
+/* leaders */
+.leaders {
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 14px;
+    gap: 120px;
+    margin-top: 2rem;
 }
 
-/* Project */
-.project-title {
-    font-size: 1.8rem;
-    margin-top: 3rem;
+.leader {
+    max-width: 250px;
 }
 
-.project-desc {
-    font-size: 1.2rem;
-    color: #ccc;
-    max-width: 650px;
-    line-height: 1.8rem;
-    margin-bottom: 5rem;
+.qmark {
+    font-size: 6rem;
+    opacity: 0.5;
 }
 
-/* Wingdings */
 .wingdings {
     font-family: Wingdings;
     opacity: 0.4;
     display: flex;
     gap: 60px;
-    margin-bottom: 5rem;
+    margin: 4rem 0;
     font-size: 2rem;
 }
 </style>
@@ -152,71 +138,110 @@ a:hover { color: #ff4f5a; }
 <div class="subtitle">Indie games</div>
 
 <p>Welcome to Exoticly, our company where we build code, tools & indie games.</p>
+<p><b>At Exoticly© we build Indie games and digital tools mainly focused on performance and gaming!</b></p>
 
+<!-- SOCIALS -->
+<div class="section">
 <div class="section-title">Our media:</div>
 
 <div class="socials">
-
-    <!-- MAIN -->
     <div class="social-row">
-        <a href="https://www.tiktok.com/@exoticly_company" target="_blank">♪ TikTok</a>
+        <a href="https://www.tiktok.com/@exoticly_company" target="_blank">TikTok</a>
         <span class="pipe">│</span>
-        <a href="https://x.com/exoticly_c" target="_blank">𝕏 Twitter</a>
+        <a href="https://x.com/exoticly_c" target="_blank">Twitter</a>
         <span class="pipe">│</span>
-        <a href="https://youtube.com/@exoticlydev" target="_blank"><span class="yt-icon"></span></a>
+        <a href="https://youtube.com/@exoticlydev" target="_blank">YouTube</a>
     </div>
 
-    <!-- EXTRA -->
     <div class="extra-row">
-        <!-- itch.io replaced with updated controller -->
-        <a href="https://exoticly.itch.io" target="_blank">
-            <svg width="50" height="50" viewBox="0 0 100 100">
-                <!-- left vertical oval -->
-                <ellipse cx="30" cy="50" rx="10" ry="25" fill="#fff"/>
-                <!-- right vertical oval -->
-                <ellipse cx="70" cy="50" rx="10" ry="25" fill="#fff"/>
-                <!-- horizontal oval (moved up, a bit thinner) -->
-                <ellipse cx="50" cy="45" rx="30" ry="15" fill="#fff"/>
-                <!-- rotated black arrow slightly right, bigger -->
-                <text x="52" y="45" font-size="28" text-anchor="middle" dominant-baseline="middle" fill="#000" transform="rotate(-90 52 45)">➧</text>
-            </svg>
-            itch.io
-        </a>
-
+        <a href="https://exoticly.itch.io" target="_blank">itch.io</a>
         <span class="pipe">│</span>
-
-        <!-- reddit -->
-        <a href="https://www.reddit.com/user/Exoticly_company/" target="_blank">
-            <svg width="20" height="20" viewBox="-10 -10 20 20">
-                <ellipse cx="0" cy="0" rx="8" ry="6" fill="#fff"/>
-                <circle cx="-3" cy="0" r="1.2" fill="#000"/>
-                <circle cx="3" cy="0" r="1.2" fill="#000"/>
-                <circle cx="-8" cy="0" r="2" fill="#fff"/>
-                <circle cx="8" cy="0" r="2" fill="#fff"/>
-                <line x1="0" y1="-6" x2="0" y2="-9" stroke="#fff" stroke-width="1"/>
-                <line x1="0" y1="-9" x2="3" y2="-11" stroke="#fff" stroke-width="1"/>
-                <circle cx="3" cy="-11" r="1" fill="#fff"/>
-            </svg>
-            Reddit
-        </a>
-
+        <a href="https://www.reddit.com/user/Exoticly_company/" target="_blank">Reddit</a>
         <span class="pipe">│</span>
+        <a href="https://www.linkedin.com/in/exoticly" target="_blank">LinkedIn</a>
+    </div>
+</div>
+</div>
 
-        <!-- linkedin -->
-        <a href="https://www.linkedin.com/in/exoticly" target="_blank">
-            <span class="li-icon">in</span>
-            LinkedIn
-        </a>
+<!-- ABOUT -->
+<div class="section">
+<div class="section-title">About our company</div>
+
+<p>This company started as a single project with the desire to make inspiring games and useful tools for Windows users!</p>
+<p>We are a small group of developers! Our company is based in Germany! For our games we use mainly Game Maker Studio 2.</p>
+</div>
+
+<!-- FADED -->
+<div class="section">
+<div class="section-title">Faded</div>
+
+<p>
+Faded is a pixel RPG game with a deep and mysterious story.<br><br>
+Explore the world and make new friends with all of our characters!<br>
+Enjoy the wonderful music while making your own story.<br><br>
+
+Faded is a game where you create your own story based
+on the actions you made in game, reaching different endings!<br><br>
+
+Faded is still in early development and we are currently in search for
+Beta testers! If interested contact us by our media or by email!
+</p>
+
+<p><b>exoticlycompany@gmail.com</b></p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="section">
+<div class="section-title">Our Products</div>
+
+<p>We work hard every day to make our products better and our customers happier!</p>
+
+<div class="checks">
+    <div class="check">
+        ✔ <span class="check-title">High Quality</span><br>
+        Everything we make is self-made which takes hours or days which is more difficult than using templates or free assets.
     </div>
 
+    <div class="check">
+        ✔ <span class="check-title">Support</span><br>
+        If there are complaints, questions or bugs, let us know by contacting us!
+    </div>
+
+    <div class="check">
+        ✔ <span class="check-title">Secure</span><br>
+        Our company does not hide any malware in products even if some anti-viruses find it suspicious. Feel free to test every product in a virtual machine or scan with any anti-viruses!
+    </div>
+</div>
 </div>
 
-<div class="project-title">Newest Project: FADED</div>
-<div class="project-desc">
-FADED is an Undertale-inspired 2D pixel RPG story game currently in early development.
-Explore unique characters and immersive storytelling in a world that’s entirely your own.
+<!-- LEADERS -->
+<div class="section">
+<div class="section-title">Meet Our Leaders</div>
+
+<div class="leaders">
+    <div class="leader">
+        <div class="qmark">?</div>
+        <p><b>Exo</b></p>
+        <p>
+        Exo´s real name is Blerti!<br>
+        He is from Kosovo and is the founder of our company and of Faded.<br>
+        He lives in Germany and specializes in Pixel art, Coding, Web design and more!
+        </p>
+    </div>
+
+    <div class="leader">
+        <div class="qmark">?</div>
+        <p><b>reaL</b></p>
+        <p>
+        reaL´s actual name is Leonard!<br>
+        He is from Moldova and is a close friend of Exo.<br>
+        He also lives in Germany and specializes in Story writing, Pixel art and more!
+        </p>
+    </div>
+</div>
 </div>
 
+<!-- WINGDINGS -->
 <div class="wingdings">
     <span>❄︎⚐︎❄︎⚐︎</span>
     <span>💣︎⚐︎☠︎⚐︎</span>
