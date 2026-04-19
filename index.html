@@ -644,7 +644,7 @@ a:hover{color:#ff4f5a}
 <div class="subtitle">Indie games</div>
 
 <div class="version-row">
-  Website Version: <span class="badge">v3.0<span></span></span>
+  Website Version: <span class="badge">v4.0<span></span></span>
 </div>
 
 <p>Welcome to Exoticly, our company where we build code, tools & indie games.</p>
@@ -1021,5 +1021,40 @@ document.addEventListener('click', (e) => {
 });
 </script>
 
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAk1QRQrdrRTxm69celpS9AOegG31UbAY4",
+  authDomain: "exoticlydev.firebaseapp.com",
+  projectId: "exoticlydev"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const ref = doc(db, "stats", "views");
+
+async function addView() {
+  const snap = await getDoc(ref);
+
+  if (!snap.exists()) {
+    await setDoc(ref, { count: 1 });
+  } else {
+    await updateDoc(ref, {
+      count: increment(1)
+    });
+  }
+
+  const updated = await getDoc(ref);
+
+  // 👇 THIS IS THE IMPORTANT LINE FOR YOUR UI
+  document.getElementById("view-count").innerText =
+    updated.data().count;
+}
+
+addView();
+</script>
 </body>
 </html>
