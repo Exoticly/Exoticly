@@ -1,98 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Exoticly</title>
-<link rel="stylesheet" href="style.txt">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exoticly</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
 
-<label class="switch">
-  <input type="checkbox" id="themeToggle">
-  <div class="slider">
-    <div class="slider-btn">
-      <div class="light"></div>
-      <div class="texture"></div>
-      <div class="texture"></div>
-      <div class="texture"></div>
-      <div class="light"></div>
+<!-- ================= LOADING SCREEN ================= -->
+<div id="loading-screen">
+  <h1>Exoticly ©</h1>
+  <p>Indie Game Studio</p>
+</div>
+
+<!-- ================= MAIN WRAPPER ================= -->
+<div id="app" class="hidden">
+
+  <!-- ================= THEME SWITCH ================= -->
+  <div class="top-left">
+    <label class="switch">
+      <input type="checkbox" id="themeToggle"/>
+      <div class="slider">
+        <div class="slider-btn">
+          <div class="light"></div>
+          <div class="texture"></div>
+          <div class="texture"></div>
+          <div class="texture"></div>
+          <div class="light"></div>
+        </div>
+      </div>
+    </label>
+  </div>
+
+  <!-- ================= HERO ================= -->
+  <div class="hero">
+    <h1>Exoticly ©</h1>
+    <p>Indie Game Studio</p>
+
+    <p class="beta-text">
+      Interested in testing the game before launch? Apply for free!
+    </p>
+
+    <!-- APPLY BUTTON -->
+    <button class="button" id="applyBtn">
+      Apply Now
+      <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+        <path clip-rule="evenodd"
+          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 
+          9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 
+          000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 
+          000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+        ></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ================= SOCIALS ================= -->
+  <div class="social-container">
+
+    <div class="social-icons youtube">
+      <p>@YouTube</p>
+      <a>Follow</a>
+      <!-- YouTube SVG -->
+      <svg viewBox="0 0 461 461"><path fill="currentColor" d="M365..."/></svg>
+    </div>
+
+    <div class="social-icons tiktok">
+      <p>@TikTok</p>
+      <a>Follow</a>
+      <!-- TikTok SVG (clean white system style) -->
+      <svg viewBox="0 0 512 512">
+        <path fill="currentColor" d="M412 118..."/>
+      </svg>
+    </div>
+
+    <div class="social-icons twitter">
+      <p>@Twitter</p>
+      <a>Follow</a>
+      <svg viewBox="0 0 48 48">
+        <path fill="currentColor" d="M42 12.4..."/>
+      </svg>
+    </div>
+
+    <div class="social-icons reddit">
+      <p>@Reddit</p>
+      <a>Follow</a>
+      <svg viewBox="0 0 90 90">
+        <path fill="currentColor" d="M75 45..."/>
+      </svg>
+    </div>
+
+    <div class="social-icons discord">
+      <p>@Discord</p>
+      <a>Follow</a>
+      <svg viewBox="0 0 48 48">
+        <path fill="currentColor" d="M40 12..."/>
+      </svg>
+    </div>
+
+  </div>
+
+  <!-- ================= SUPPORT ================= -->
+  <div class="support">
+    <div class="tooltip-wrapper">
+
+      <ul class="tooltip-container">
+        <li class="nav-link">
+
+          <div class="tooltip-tab">
+            Support
+          </div>
+
+          <div class="tooltip">
+            <ul class="tooltip-menu-with-icon">
+
+              <li>
+                <a>
+                  📧 exoticlycompany@gmail.com
+                </a>
+              </li>
+
+              <li>
+                <a>
+                  ⏰ 1–3 days response time
+                </a>
+              </li>
+
+            </ul>
+          </div>
+
+        </li>
+      </ul>
+
     </div>
   </div>
-</label>
 
-<div id="loadingScreen">
-  <h1>Loading Exoticly...</h1>
-</div>
+  <!-- ================= TESTER INFO ================= -->
+  <div class="tester-box">
+    <p>
+      As a tester you will receive exclusive in-game items and early access.
+      Spots are limited — be quick.
+    </p>
 
-<div id="app">
+    <p class="email">
+      exoticlycompany@gmail.com
+    </p>
 
-<div class="flip-card">
-<div class="flip-card-inner">
-
-<div class="flip-card-front">
-<h1>EXOTICLY</h1>
-</div>
-
-<div class="flip-card-back">
-
-<p class="desc">Interested in testing before launch? <b>Apply for free!</b></p>
-
-<div class="rating">
-<input type="radio" id="star5" name="rating"><label for="star5"></label>
-<input type="radio" id="star4" name="rating"><label for="star4"></label>
-<input type="radio" id="star3" name="rating"><label for="star3"></label>
-<input type="radio" id="star2" name="rating"><label for="star2"></label>
-<input type="radio" id="star1" name="rating"><label for="star1"></label>
-</div>
-
-<button class="button" id="applyBtn">Apply Now</button>
-
-<div class="container">
-
-<a class="icon yt">
-<svg viewBox="0 0 461 461"><path fill="currentColor" d="M300 237L174 297V168z"/></svg>
-</a>
-
-<a class="icon tiktok">
-<svg viewBox="0 0 512 512"><path fill="currentColor" d="M412 118c-40-20-60-50-70-90h-80v250c0 40-30 70-70 70s-70-30-70-70 30-70 70-70c10 0 20 2 30 5v-80c-100-10-170 60-170 150s70 150 150 150 150-70 150-150V176c30 20 60 30 90 30z"/></svg>
-</a>
-
-<a class="icon x">
-<svg viewBox="0 0 48 48"><path fill="currentColor" d="M42 12L24 30 6 12h8l10 10 10-10z"/></svg>
-</a>
-
-<a class="icon reddit">
-<svg viewBox="0 0 90 90"><circle cx="45" cy="45" r="40" fill="currentColor"/></svg>
-</a>
+    <button class="button" id="backBtn">
+      Go Back
+    </button>
+  </div>
 
 </div>
 
-<div class="tooltip-wrapper">
-<div class="nav-link">
-<div class="tooltip-tab">Support</div>
-
-<div class="tooltip">
-<ul class="tooltip-menu-with-icon">
-<li>📧 exoticlycompany@gmail.com</li>
-<li>⏱ 1–3 days</li>
-</ul>
-</div>
-
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<div id="finalScreen">
-<h1>Exoticly ©</h1>
-<p>Indie Game</p>
-<p>Tester perks: exclusive in-game items + early access</p>
-<p class="email">exoticlycompany@gmail.com</p>
-<button onclick="location.reload()">Go Back</button>
-</div>
-
-<script src="script.txt"></script>
+<script src="script.js"></script>
 </body>
 </html>
