@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exoticly ©</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 
 /* ─── LOADING SCREEN ─── */
@@ -139,15 +139,22 @@
 }
 
 /* ─── LIGHT MODE ─── */
-body.light-mode { background: #fff !important; color: #000 !important; }
+body.light-mode { background: #f0f0f0 !important; color: #000 !important; }
 body.light-mode p { color: #333 !important; }
-body.light-mode h1 { color: #000; text-shadow: 0 0 10px #000 !important; }
+body.light-mode h1 { color: #000; text-shadow: 0 0 10px #000, 0 0 30px rgba(0,0,0,0.3) !important; }
+body.light-mode .subtitle { color: #444 !important; }
 body.light-mode a { color: #000 !important; }
-body.light-mode a:hover { color: #ff4f5a !important; }
+body.light-mode a:hover { color: #c0392b !important; }
 body.light-mode .pipe { color: #aaa !important; }
-body.light-mode .wingdings { color: #000 !important; }
 body.light-mode .icon { outline-color: #000 !important; color: #000 !important; }
 body.light-mode .icon svg { fill: #000 !important; }
+/* Fix YouTube icon specifically in light mode */
+body.light-mode .icon-yt svg path { fill: #000 !important; }
+body.light-mode .icon-yt:hover svg path { fill: #fff !important; }
+body.light-mode .icon-tiktok svg path { fill: #000 !important; }
+body.light-mode .icon-tiktok:hover svg path { fill: #fff !important; }
+body.light-mode .icon-reddit svg path { fill: #000 !important; }
+body.light-mode .icon-twitter svg path { fill: #000 !important; }
 body.light-mode .outer { background: radial-gradient(circle 230px at 0% 0%, #000, #f0f0f0) !important; }
 body.light-mode .card-views { background: radial-gradient(circle 280px at 0% 0%, #ccc, #f5f5f5) !important; color: #000 !important; }
 body.light-mode .card-views .text { background: linear-gradient(45deg, #fff 4%, #000, #fff) !important; -webkit-background-clip: text !important; background-clip: text !important; color: transparent !important; }
@@ -156,15 +163,43 @@ body.light-mode .flip-card-front,
 body.light-mode .flip-card-back { background-color: #e0e0e0 !important; border-color: #555 !important; }
 body.light-mode .name { color: #333 !important; }
 body.light-mode .pfp { fill: #555 !important; }
-body.light-mode .tooltip-tab { background: #ddd !important; color: #000 !important; border-color: #555 !important; }
-body.light-mode .tooltip .tooltip-menu-with-icon { background-color: #eee !important; border-color: #555 !important; }
-body.light-mode .tooltip-link > a { background-color: #eee !important; color: #000 !important; }
-body.light-mode .nav-link svg { fill: #000 !important; }
+body.light-mode .leader-name { color: #111 !important; }
+body.light-mode .leader-role { color: #555 !important; }
+body.light-mode .tooltip-tab { background: #222 !important; color: #fff !important; border-color: #333 !important; }
+body.light-mode .tooltip .tooltip-menu-with-icon { background-color: #222 !important; border-color: #333 !important; }
+body.light-mode .tooltip-link > a { background-color: #222 !important; color: #fff !important; }
+body.light-mode .tooltip-link > a:hover { background-color: #333 !important; }
+body.light-mode .nav-link svg { fill: #fff !important; }
+body.light-mode .tooltip-menu-with-icon svg path { fill: #fff !important; stroke: #fff; }
+/* Support tab hover - fix pink to a proper color */
+body.light-mode .tooltip-tab:hover { background: #333 !important; }
+/* Rating stars light mode - make visible with high contrast */
+body.light-mode .rating label { color: #bbb !important; }
+body.light-mode .rating input:checked ~ label,
+body.light-mode .rating label:hover,
+body.light-mode .rating label:hover ~ label { color: #e67e00 !important; }
+/* Stars (CSS stars around globe) light mode */
+body.light-mode #curved-corner-bottomleft:before { box-shadow: -5px 5px 0 0 #222 !important; }
+body.light-mode #curved-corner-bottomright:before { box-shadow: 5px 5px 0 0 #222 !important; }
+body.light-mode #curved-corner-topleft:before { box-shadow: -5px -5px 0 0 #222 !important; }
+body.light-mode #curved-corner-topright:before { box-shadow: 5px -5px 0 0 #222 !important; }
+/* Slider white in light mode */
+body.light-mode .slider { background-color: rgb(230,230,230) !important; border-color: #ccc !important; }
+body.light-mode .slider-btn { background: linear-gradient(to bottom, #f8f8f8, #e8e8e8) !important; border-color: #ccc !important; background-color: #f0f0f0 !important; }
+body.light-mode .texture { background-color: #bbb !important; }
+/* Depth card light mode */
+body.light-mode .depth-card { background: #ddd !important; border-color: #bbb !important; }
+body.light-mode .depth-text1 { color: #111 !important; }
+body.light-mode .d-one { background-color: #ccc !important; }
+body.light-mode .d-two { background-color: #bbb !important; }
+body.light-mode .d-three { background-color: #aaa !important; }
+body.light-mode .d-four { background-color: #999 !important; }
+body.light-mode .d-five { background-color: #888 !important; }
 
 /* ─── MAIN BODY ─── */
 body {
   margin: 0; padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Inter', sans-serif;
   background: #000; color: #fff;
   display: flex; flex-direction: column;
   align-items: center; text-align: center;
@@ -175,19 +210,24 @@ body {
 
 h1 {
   font-size: 3rem; margin-top: 3rem;
-  text-shadow: 0 0 10px #fff;
+  font-family: 'Roboto', sans-serif;
+  text-shadow: 0 0 20px #fff, 0 0 40px rgba(255,255,255,0.4);
+  letter-spacing: 4px;
   animation: float 6s ease-in-out infinite;
 }
 .subtitle {
-  font-size: 1.4rem; font-weight: 900;
+  font-size: 1.4rem; font-weight: 700;
+  font-family: 'Rajdhani', sans-serif;
+  letter-spacing: 6px; text-transform: uppercase;
+  color: #aaa;
   animation: float 6s ease-in-out infinite reverse;
 }
 @keyframes float {
   0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}
 }
-p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin: 1rem 0; }
+p { font-size: 1.15rem; max-width: 800px; color: #bbb; margin: 1rem 0; line-height: 1.8; }
 .section { margin: 3rem 0; max-width: 900px; }
-.section-title { font-size: 2rem; margin-bottom: 1rem; }
+.section-title { font-size: 2rem; margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
 
 /* ─── VERSION BADGE ─── */
 .version-row {
@@ -250,33 +290,33 @@ p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin: 1rem 0; }
 /* ─── CHECKS / STAR ─── */
 .checks { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
 .check { font-size: 1.2rem; }
-.check-title { font-weight: 900; font-size: 1.4rem; }
+.check-title { font-weight: 700; font-size: 1.4rem; font-family: 'Rajdhani', sans-serif; letter-spacing: 2px; text-transform: uppercase; }
 .star-icon {
   position: relative; width: 100%; height: 100%;
   display: flex; align-items: center; justify-content: center;
   filter: drop-shadow(0 0 2px #fff);
 }
 .crack {
-  position: absolute; width: 10%; aspect-ratio: 1;
+  position: absolute; width: 25%; aspect-ratio: 1;
   background-color: #fef3fc;
   clip-path: polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);
   animation: rotStar 6s infinite;
 }
-.crack2{width:12%;animation-delay:1s}
-.crack3{width:14%;animation-delay:1.5s}
-.crack4{width:16%;animation-delay:2s}
-.crack5{width:18%;animation-delay:2.5s}
+.crack2{width:30%;animation-delay:1s}
+.crack3{width:35%;animation-delay:1.5s}
+.crack4{width:40%;animation-delay:2s}
+.crack5{width:45%;animation-delay:2.5s}
 @keyframes rotStar { to { rotate: 360deg; } }
 .check-star-wrap {
   display: flex; align-items: flex-start; gap: 18px; text-align: left; justify-content: center;
 }
-.star-container { width: 60px; height: 60px; flex-shrink: 0; margin-top: 4px; position: relative; }
+.star-container { width: 150px; height: 150px; flex-shrink: 0; margin-top: 4px; position: relative; }
 
 /* ─── LEADERS / FLIP CARDS ─── */
 .leaders { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; margin-top: 2rem; }
 .flip-card {
   background-color: transparent; width: 245px; height: 270px;
-  perspective: 1000px; font-family: 'Roboto', sans-serif;
+  perspective: 1000px; font-family: 'Inter', sans-serif;
 }
 .flip-card-inner {
   position: relative; width: 100%; height: 100%;
@@ -297,25 +337,31 @@ p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin: 1rem 0; }
 .profile-image {
   background-color: transparent; border: none;
   margin-top: 15px; border-radius: 5em;
-  width: 120px; height: 120px; margin-left: 50px;
+  width: 120px; height: 120px;
+  margin-left: auto; margin-right: auto;
+  display: flex; align-items: center; justify-content: center;
 }
 .pfp { border-radius: 35em; fill: #aaa; }
 .leader-name {
   margin-top: 15px; font-size: 22px; color: #fff; font-weight: bold;
+  font-family: 'Orbitron', sans-serif; letter-spacing: 1px;
+}
+.leader-role {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: #888; margin-top: 4px; font-family: 'Rajdhani', sans-serif; font-weight: 600;
 }
 .description {
-  font-size: 13px; letter-spacing: 0.5px; color: #ddd;
-  text-align: center; line-height: 1.6;
+  font-size: 15px; letter-spacing: 0.5px; color: #ddd;
+  text-align: center; line-height: 1.7;
   margin: 0; padding: 0;
 }
 
 /* ─── GLOBE / AROUND THE WORLD ─── */
 .section-banner {
-  height: 250px; width: 250px; position: relative;
+  height: 210px; width: 210px; position: relative;
   transition: left 0.3s linear; margin: 0 auto;
-  background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAAAAAAD/2wBDACYaHSEdGCYhHyErKCYtOV8+OTQ0OXVTWEVfinmRj4h5hYOYq9u6mKLPpIOFvv/Bz+Lp9fj1lLf////u/9vw9ez/2wBDASgrKzkyOXA+PnDsnYWd7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Oz/wAARCAE5AfQDASIAAhEBAxEB/8QAGgAAAwEBAQEAAAAAAAAAAAAAAgMEAQAFBv/EADoQAAIBAwIFAwIFAgUFAQADAAECEQADIRIxBCJBUWETcYEykRRCUqGxI8EFYnLR8DOCkuHxQxVTY//EABgBAQEBAQEAAAAAAAAAAAAAAAABAgME/8QAIBEBAQEAAwEBAAMBAQAAAAAAAAERAiExEkETUXEDYf/aAAwDAQACEQMRAD8A9T1Adg32rZPtWavI+9bA8VpAy3dftRDP5vtSmuDaPtXBWI5dSjyaYhx0jd/3riyD89TlXH029fzWAOufTtp96Yaf61rb1Kw3rQ/P+1KD92n2U0epTnQ3wKuAhxFo7GfisPE2huY94rAQThG9sAULBQPox4IpkDBftMJUz8Vmv/QPegV7cxoB/eiKof8A8ZpgFr4XdlHwaAcWn6x8LTQkbWVH2rpYHCn7U6AjiVPU/wDjW+uP1D5FFqJEQD70GknMADsBFAYuk7H7LXa26k/+NcGYefijWf8AgqANTxgH/wAazXc/Sf8AwpuOprGmOWKKSbrgTA/8TWes/wClaZqHWJ8Zro1dvmqhfrxuq/eu9YxISfY1rLp3VfkCsVo2Fv8AiqM9c/8A9bV3rx/+T/aiJU/UFHkNShYXJV1z3n/enSGi8D+UzRqxP5alNoz/ANa17ATWCyx+niAPmmQV6u4rdY61J6fELtdDfNDr4lTzIGHjemGrda9x962QdiKlW8mrmLp4KmqF0ESp/aKij0jxW6B0iksLUwXAPvXemoEy0eDQO0e1ZpHilBViSG+WrtNsn64PioGEe1cQImaDQnVprilsDOP+6qO1Cd5rp7A/ehLWx9Pp/LUOt5hTY+9A2T2H3rA+Y5fvS9dwQSLQ8zXfiAMMLRH+qiGF4MHT967VPQfcVO13hyZ9FSfDVnqWelhfk1cDjdUd/g0QugiQ0fNJFwDK2bcdxXeuZghR4j/1QMN8D89aL6H84oBfH6Y/7aI3kjNsfagaHU9Qfmt1Cdh96Ut2ye3/AI0X9IjlVDUUZYfoP3rNX/8Am3waGF/T+9CSqnKAe5oDNwdVYe9YbqdA1Z6w2BU0J4gLgqtMB+snUH70QvWz3+9Bbu+ocLjvpxWu4Xe1PkUB+qld6qePvSg9o/lK0RNro0e1MDPUH+X71nqp1FK1WRktq+KIC0/0zUyBnqp0/it9W33H2oBbQ400JtocTHtTIG60/UK6khE6XG+9dTBIeKukSBB7QKKzxF0nnIj2rbic35vcCsXUJ2MdDW+kVAh1lTFMXaovWB6Ed4NN9UEjH71nFVD3rPSU5k/egt3J/KBFZdukJIYKo3JzUxR+mi5E/c1zagOWKSpvMNXqrpO2JrR62wow77UGM7A5kewqch9wQx7RVbFozbn2M1i20YfTHvVlTE/rNbXntftWWuKRjpKaT3BptxdLAKRnoKWbNtxGgT3HStdIpV8YIIridJeLaAfmazbUBy4rAIAlZy3PdqwtQKkMoxEiCRQYVT22PSq4UzB+lGO0E/SIgV3HKEAatQGa0CWtmJnYnH8VrWuXVKAWzpJnJ6VjTJAJmM4INXWbu3VBEidx7UqTaNjhCWEHRgkGe1OGhiGIuKuOrRkVhNnUcoE9TI5oFVYBwPlpPSPmtQpqGk7j+Kz0YJBMH2oQ0bCRg5oNjEyYK+eKY6kqQwz2PasAUSQJHU1oVbiFmJPgjA+1EWuGHOoYPiKwWkCAFIJx4oD8Q6SoHXBqk6PbDPRSqWZ5mBz0FMfhWDEmFBbOBuKHRqJMAg4kZqW5cKhVAEj+apaJl2K7TsRtUQ4koOWVAO0UTuSxO+e4oAqCGOSNzW6GklmJJJz3NTVfRKnJ3OB7UEcRiDMfmoq7lIzjB3qQBjOJJANGxgcwE/c4oDoWChiMkY3pWVD5jHc5q3WCQvMeT8tQSRO1USSRt1kbVsDBYBiB7UsHHXPWiVVIO0LPTf/So5OSoOTtUGPxEIiBmMSN+9VoJAU4JOTHapdRWTERkLzEVpF1FJJVicd+tBUkHEKAJ2B+9F6dgFBYAegDmtGkFgFAMdM0bW2KxByOgbNIjt20xk7b1bxIQTI3xO1ZpY5RgNPT0YUF+ycqJJJFWhXIBJlv9OPeaX6RJWcRJFNlRLMDkxuOop8AkAZJ9t8VJDlVYqBkYqjK5A2hhsDUhHJJRYGMkHvRrcHIPLEe1T4h5ysYI3jaa7S1cJUbkgYAHbNCylSVWAkHHT+aXOqoTtgEZ60Y9N8aQfamDXLAIIkfxQGSqiWO2N6sLs4kwOnvWIJkkDn9N6AkHlJyDilKlgMjYntRIVMuMAdpjepvLzJI9hkimBSmomB5x5qxkYHOYjJ2FBcoYT75rVAJAJAPbjFKvuMq7ZPWsKsHUjTGfBNAHImIHb+KOyGAMduvaiAuwDKIPidqCEhh6R74qNMLi2CcSTJnnVVoBgLI7jFMRBTI2wDil3EAAGZiO1ICiGOwOIzQJDZCMu4OwoxIJBYFZ8daBGWcbiNsmqnCcggkRvmgCHcIMyREYoQkE5I9xvVjKbRKkwOkCstKlhgR6jzNQNHQVCICVJg5xmnJ9TuAI3NSojQQqNnuajSRIM+JpiLz5Gcj2oNOCFIJycdKi0gcqMg7eoqVIJXJknpmgGRWHMQCQCOM1Lby2QFJUHpFZfUF2KmDtmKGSxLAiCOh6UBLFbhVyQQe2aYZAkpgjf3rNWwAQJO4oHMGIDTz34qVLGlXgAG0kRvVwYFZOCe8CsJkCVJj8Kn4kAEkjfJqbGdSFJkgeh9K0tSMbj+agRJBz8nvT0I5wZgDpNHb4ZQ2wHf/dSkVBkBiBsB3oFsgFpJnbxRkYEfMigKTEiCP3pRj0BxmJ5aAdnkFlkT3FZc9V5YVicnpRgjIyY2O1aEDCBGfH+6VFSoUFJBHSmFpBiYjn3pQ+baSM96OVxqKkH4pj6WYoMqe1MRLg6SQJkHYULBpIYZqyrncHjvUbhgTqB8E4ohqJgAb0RIgk59WTQVhUaZIkHaJqzAE5xGO9BsWJlwDvHisvqEF1BgtEcuMVGFXHKXIOBn96rBiSOv+lNLMygqCcmBigpCggCMnvU0K4kk+1azpJkDI7Ur0oBLbnbFAlgA5ZQT0OKWp/UAhiF7xiiHJCwc7bCi0gkktg9TFNAhB5iFHp3oSDGCIJ2OMVsFDAEFiOsjaqq4IBiB7VLgdHJMx80GpBJmJMiYoA7knAwK1i2kyRmJOM+9RO4GxJI3waJp0nGCe3egZXcEuADI2GKBlACyQT5pQkJkAgRk43pdSHlAJPqHSgEowMtmMn0xUs7ATMydwM1a8OCowAcY6VJnIIAI8nJqVEdiBInv5qSvbIJkge9GZDqdhPc4irATAAE59s1MzqhTHmZqKl2OAnf+1FxDqTOIxv4oLlJBJPbFavqAxAjO5oq6YEjbP96e6hpnJz4qVJY9QCPfIquCCDnJHWqwMQT7YBPtQKkNysBJ3A3oJ1kHHYYzUTRt5YEdM+1KE4YEEH6tqmLlRkgA5HPbNErhtoGBiJqRgByKAGCNhJwcniqxV1YL07bUNNpAHuO9bqHJIweYUCHV5IAAO3eBVAEEsqnYUKlXJHN5nFbOxDnB5dvArTXTI5SD5NKiVXOMxRZCNBRyciTiiFwuQRAUg7gVTj0zGCZxTBcaRIJ+BijBZBIGI6k0ATAI/MRMZ8daIJGQBJPue1GwEgSCOowKJSMcuGH84oFAZJBgD/esJbmGQJM0bXFJJbB9AMVQJ3BMSAO3vQXJILAFZ2JJoBQEkmPekDcxkE+mZoAXJAYnHOe9VhVCncA9M0o1DIBJJJHSmCFAIOI7mmhJI2IPSeaaozPTO5GKqmGJkAzj+9B24QhDGSY5u9V2eCeUYEd6WxJJPMCM4z4oDQAonaB0pV0MUBIIMbGrBBMZJEYiB0pNxRBkkD3pFmk5gE+Y70oRSZIGD7UBPMCegqSyCQoJAwJxTW1FQo5QcECRVXCfSRIPMeUVIBrQTqkZ60SsW4DIBJIJjFQoQAzPKJJjHTbFGW3MkgAd5mqfqfcTCgMCcj3qRQwLNIAj1A7UahknLcozPgdKIDOMRvGJ3q6lNxJByNzQCCq4Ej3NeU1wGJ5cExHNUcsTJGB0kzUXY6gN4EKPNA0uwBCqMQT7UoAqFXECM5ppYkrknYjFbO0BI6g77UClTJknn280aBgBAJHTb+arJbJk5JqMGVIMZFMCHk2PtVlq4JEgcvJiqMEiDn2kgiqtQHJ5jH2FAoJYFhiZztVhVhJB3EYGeag52IzHUZ3ohjJI5T70EkTBPf/AHqrIAkZMGicGcFpH+XemFJInPLijFwNnpnbbrTSJkHJ3OKD2AaRgnOQR2pCRkg7+c0ypBBb1AzbntVBaQRIBHQ0gu7aipDMSD0BGKVTJAHYGd6sUxEcxIPQHrUNwFCAmPFUbWUHJPQbmqQNoGJx1mKRvJYlYJE55TQNiqkBFI2kd6VY5gSBvimFiBJAB6b0AmAU5TBOMg+1IqkgHBBj94opYnBGSmD0qKnIMgAifpFAAg6h1M4znpUYKMnURjI6Urw4ByAI2prfUASAOuOtBKrHpjJ8VVqIVBMgR0k1f6hwQA2CMSZG1TIEMBiScnnegISFIkDjgUAlzqIDkd+lbbZYjIMgdz1oVAbAzB8A5pbIMEEHkH0iqUlCSBBOQT3qU7n6RHLmakYZJAAAnOYoKWLE7E7e9MJCrkA/e1UEgGDzA75FUSCSpJxO/NR6mJlZAA5iYNMUnUQcfBiqQxAkZpSQDgkd6IpBkGfBpqoGQWO/cRVZDJBDCB0ilRGCM+I8gU1VAMgZ6Cm5Jjfb+aKBiAMDiOWRQC3GJByO2KFg6ZYkHpNKkHYbHFNBwBGDO1GWGMEkYzHtTBUkHOAT4pVBOdpB2HWirR57kxuDSqdREEiMCgHMVMkTHXrSsSwJJxnpzVIIBIJERn+KUGMR0BOenSqCY09AYoWAGzDA9wRQYMSRJ9p2owwBIzgjH86KACVB/KNoJpE0kknrG1BcLkcpyehO1G4yoJM57GaM27rjmjkMAQNjRDSACCJIOxqYGLMQCwOCRPsaIEkggQdiO4pdBIE9Ce9Ro3YHHTJ6UoDRBEMM7gHPIapkBhJOc5x1pZJIxBzj2og0kiFgDAxHf2oJgkAkkdsGr9IIkE9wc96gD3GG8kjpVQSykECMfhVhqzIIwY2oNgJBHOeU9BRTDZ5SSfbFUpJOY+lJzBxPQUxGsAkZ9zQCiTEAAgn7Vn1k5OcTnkxVbcxAJ25xkZpV0AHckHvH86VVBIxEE9c96oBkDJzH05P3oiSwkxkQPepXOCQN8g56VAEMBj2xtUiIlVLDfpFVCYAUgHO/8AU1KGWQ4AMkZ360oyyBEg4+cGqQBIM7A9/wCaFgrqjJBH0HvO9VcCJGYz78xUDJOwJGPqiq0klYAJJJJBzUqsNg3YZOc1GJkCdse1WIKlTG4E+OlSF9ySYERgCgVqPPMoA75NCjRAJjkOaGNqKiCCT9J6bURY8oUfSaBFcH0tB7YqDPJIIIO5n/agEsYH+XH3ok/YkZ7wYqBKkBdwBJOR1oLqQQCQAD3OaBCmSoI5R0qhj6V5gfv0oFXJEnBAiJPSoJaTGRGM471J5JbPfGD1pqBpAJBHYijVSSMxiNwaXqQJABGCB0JqoDkkbg7bCiKFCpGJ6Hv71ZEkAMpB3znFRQAFBIk96IJBJBGc7VsIyFABJAHShZyQdwJPetBEmSZBPOaBJIMnBP+9bJAkAnpFBrgkDOwO8Y+1HqkAbRJx1oFVImQZ96AySDnbPamtBSVMkHfagVsOCVkkA5oJcMR5AkRmgHUqSSAMxHWqtJgg5xJHc0TkHYEdqKVpJBBjGKFkHIAEgdvbFA+oJ5T9J6EVJCFA9Q2qgBhIMkHJpXBIXqT08ioMigghhHkHPvRkuVEiSoBHWgcEjmkCPfcUjEkEDByNqJADqOTiAc81LjHQjbPWmFkzBJB7DnFAyiJbYlRmMk9MUCMkl5jII6bGnlDnJGDyALtme+aEmAOYe+KpQHJJYSZkZPWgJRfRE7E96LkJwADk9+aKtMxUMSJj9aJhqBOcTM9qBVJBAkHGPyoUBkgHcjpRMpByRg/a1IAmSJIyYz2quJAkZH3obEMGI5cHlPag0HJMiQZz7Ua6hCbAkCDmmkSBggj2paZJBO4JFMB4K4nMSMiK1U1HJAO37UVDAFiRknJx40J2CkxsQOgIzQAhBAxAB9p5qLbzqJn+9eYAM7HIHc1Gpy2CYBoAiTAyPn2rCqiCcAkbRnpiqYABgySMCO1BGSZORBhvzJoD3R9xmqgAjJE+e1DExG/WKgTzxHUf3qEkiPbepHI4GwqFJGCZye23WiJ9QPK4nTm1Q0kiRO2Opqwm1YHKByGMnmoEGZjfI3NSBgB1gHbmqwGAkg4wfftUiJEjmB6YPWlRqgHbPqj7miGJ9IBIPQ0BGYYCQY5iOgq6iImBBPQGZoWBI5ZMn8sUq3GECDyg4PSgE8s8x2OfPWq1mQRsJPiKKlMbAA7kH9aA2M+kZBxt96ChSVBHP0x33pHJdpAzA8Gq1JEBQeZM4xSmXIGD7Y61GJI7DHQV71RBzApjBJAP5mg1OMjkP5e9aGjmkZ5c9MYqoGIEkAkZGfzqr3MEbE56daBTlJB2xvUi2SSJyOgzQ7sBJI3IPzpggkHIMHbFBBJBJAifrFaShAUbE++aaCAR3+8UTHkBIGZ37UGlpAGMEe9bBEjnH60JXfOeUAkbCqHJ3OAJ+9B1AAkA/wA4oFaVIBzAIPfFBjJEgdTnFdKYVQ4gYiKg2XJMxHagYEZ5SoMGe3lTD6SR2OSaHcN1HfiiWzJOTg9xzQHUgKQoAGKuZfmURzE0xYJCk98GsLwIEA5+tBOocDkGI5ug7UDAtjMkE98dKAW5ZjHYY60REBSTjB3qxHIPMORHU5qYhIOMjPNQZFxqHM4jJ6xTCoGSSSTHOaVAbkxHcxO1W5QCfn2oBSCoE79Tiiod2gzJMCt60iBMmce+RSQoKkEiDB+aBlAkgREeaVVAjkBOM8oHSBT0JAUiMjAPSqipBGMx4oASSRAkEj96zYpE+RmCM+9MRELLg7nig0CgEgR9WaUjSTGCdjg0CKSoGD0G1LBYCIJCnJJiiZSAJg5OxHWqbRGJJ+mBihCqO+JIyMnqKuRkDlg4zgihBZiCJJ70RIAOMjHQ7CpCB9R5YiJxS0nkCByYhSd6Vc5DIBI2yCKEjJmDkHFIAqCuoMVAzgZz7VaSAIA9XqxE4FbWwYESADk5xVYFpBHMcHtiKCg5iBgDBPJUMbhsgb5+lSaWAYdJEz3FOQB1BkTG3QZrRjBiMntQK6kAkwPfeoJDEZAjaJ/LrVBIBBBEjH0nHWqMiSs7dAahCxIGwHqIMUCkHJxIMxHWlHcHnMiNqA6kAEEd6hk1A4OBHbFbSQIEicbCm8pbO7GMEZ5qKqSuJPTHWgZQGAxnMHpFZ5JJkEe1EwRqMjA69zUsGIMnPMNqeqJJVBJxn5yKkJj7ETGOcbVq7GJz7nvQAA6SOo3mpQDJkAj2Ga1GBgjHX0yKtREBzPgbUtMqFhpBHf1Y9K1RCmRJiMiDjmiZy5JMiDyCN4NLRkiT0AnioBSCJHQbDFdm0FTB/MdJNMRwFIMQBO2KoJELMEkA9Y65xQLkzgYBzEdKjIOIDRHXtVCBJDEkeKByQSDkxPaYoZxg8xPiNqKsgkSRiY6VEBiMZH09xQSTJzJGMZ+9BqaSJIkjHaikEGIHTuaE4jIPM4J4GRVYbagcknPzQKIIOcgd806zyC0SR7b96I8xjAiB71kbEYzMd6AyoBJBO/WTVpjBgRBG59zU6EsBGZ5Rn7UsiTg5HTHQ0BkgKRJPzxT1PMMkAjaRTEJEZLYHs3+1IOBBg5E5oAiSRgZ3NZ6yBg7ZmTNBJQiMnYz60rTgkdcHBpQDzQADie+RQKIGPRIkZ+tZQCABEgD6ZoJZiVIBJOAe9BuSFAOD170Ayh5pBJ2OKWi+rJJMY2GOtdDNJCgnYT86VQAFnpEDMT0obwACMgjb4oCtHQQBmOMH3ioiAoI6BfjNGhMmMnpOaTJBUMCMjFBVYGCRjO2fNOQOCBHb+aXMkybIke9YDO5DKB0jNGqmSDk79aBGVHUjcjbmqkDn2zgiZp6KQPWJBGx74pVMbkk4I7xtQAkjJLEgHbFZAAwB0E9Kj6JAM5GxGetWglpAknb3oJN0FYKxJHJj7VZJMkH8uQYzQJBYh4gYiBt0xUqEJMkgA79axgA5JIg5FMxmRkGI+9MQDzDAPjPQVXBZidskT5PtQFKe1IQCAOYE9jTLZJkAmJzgd6jYnOCYjHWpVBT1DIyMb0oE+kZME7Y2oNIJJMSQfSfFKgdYIzmIqhRnaOX2rEk7EkzPPQAoJMZO8HtQJETgHO8bUrkkEDAnPemFiBj/9k=") no-repeat center/cover;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif") no-repeat center/cover;
   border-radius: 50%;
-  animation: earthRotate 30s linear 0s infinite;
   box-shadow: 0px 0 20px RGBA(255,255,255,0.2), -5px 0px 8px #c3f4ff inset,
     15px 2px 25px #000 inset, -24px -2px 34px #c3f4ff99 inset,
     250px 0px 44px #00000066 inset, 150px 0px 38px #000000aa inset;
@@ -325,15 +371,15 @@ p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin: 1rem 0; }
 /* Stars around globe */
 .curved-corner-star { display: flex; position: relative; }
 #curved-corner-bottomleft,#curved-corner-bottomright,#curved-corner-topleft,#curved-corner-topright {
-  width: 4px; height: 5px; overflow: hidden; position: relative;
+  width: 9px; height: 12px; overflow: hidden; position: relative;
 }
 #curved-corner-bottomleft:before,#curved-corner-bottomright:before,#curved-corner-topleft:before,#curved-corner-topright:before {
   content: ""; display: block; width: 200%; height: 200%; position: absolute; border-radius: 50%;
 }
-#curved-corner-bottomleft:before{bottom:0;left:0;box-shadow:-5px 5px 0 0 white}
-#curved-corner-bottomright:before{bottom:0;right:0;box-shadow:5px 5px 0 0 white}
-#curved-corner-topleft:before{top:0;left:0;box-shadow:-5px -5px 0 0 white}
-#curved-corner-topright:before{top:0;right:0;box-shadow:5px -5px 0 0 white}
+#curved-corner-bottomleft:before{bottom:0;left:0;box-shadow:-12px 12px 0 0 white}
+#curved-corner-bottomright:before{bottom:0;right:0;box-shadow:12px 12px 0 0 white}
+#curved-corner-topleft:before{top:0;left:0;box-shadow:-12px -12px 0 0 white}
+#curved-corner-topright:before{top:0;right:0;box-shadow:12px -12px 0 0 white}
 @keyframes twinkling { 0%,100%{opacity:0.1} 50%{opacity:1} }
 #star-1{position:absolute;left:-20px;animation:twinkling 3s infinite}
 #star-2{position:absolute;left:-40px;top:30px;animation:twinkling 2s infinite}
@@ -395,7 +441,7 @@ p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin: 1rem 0; }
   color:#fff;gap:10px;font-weight:bold;
   border:3px solid #ffffff4d;outline:none;
   overflow:hidden;font-size:15px;cursor:pointer;
-  font-family:'Roboto',sans-serif;
+  font-family:'Inter',sans-serif;
 }
 .button .btn-icon{width:24px;height:24px;transition:all 0.3s ease-in-out}
 .button:hover{transform:scale(1.05);border-color:#fff9}
@@ -430,6 +476,7 @@ p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin: 1rem 0; }
   text-transform:uppercase;cursor:pointer;
   border:1px solid #fff;transition:0.3s ease-in-out;
 }
+.nav-link>.tooltip-tab:hover { background: #1a1a1a; }
 .tooltip-links{text-decoration:none}
 .nav-link svg{fill:#fff}
 .tooltip{
@@ -458,9 +505,9 @@ p { font-size: 1.2rem; max-width: 800px; color: #ccc; margin: 1rem 0; }
 .rating-wrap{margin:2rem 0}
 .rating{display:inline-block}
 .rating input{display:none}
-.rating label{float:right;cursor:pointer;color:#ccc;transition:color 0.3s}
-.rating label:before{content:'\2605';font-size:30px}
-.rating input:checked~label,.rating label:hover,.rating label:hover~label{color:#fff;transition:color 0.3s}
+.rating label{float:right;cursor:pointer;color:#444;transition:color 0.3s;text-shadow:none}
+.rating label:before{content:'\2605';font-size:36px}
+.rating input:checked~label,.rating label:hover,.rating label:hover~label{color:#f5c518;text-shadow:0 0 8px #f5c518;transition:color 0.3s}
 
 /* ─── DEPTH CARD (psst) ─── */
 .depth-card{
@@ -532,13 +579,13 @@ a:hover{color:#ff4f5a}
   <div class="subtitle">Indie games</div>
   <br><br>
   <p style="font-size:1.6rem;font-weight:900;color:#fff;max-width:700px">
-    🎮 Become a Beta Tester — Exclusively Yours!
+     Become a Beta Tester!
   </p>
   <p style="max-width:680px;color:#ccc;font-size:1.1rem;line-height:1.8">
     This is a rare opportunity to experience <b>Faded</b> before anyone else gets to.
     As a Beta Tester, you'll receive <b>exclusive in-game items</b>, early access to unreleased content,
     and the chance to shape the final product with your feedback.<br><br>
-    <b>Sign-up is completely free.</b> Spots are extremely limited — once they're gone, they're gone.
+    <b>Sign-up is completely free.</b> Spots are extremely limited, once they're gone, they're gone.
     Don't miss your chance to be part of something special.
   </p>
   <p style="font-size:1.4rem;font-weight:900;letter-spacing:2px;color:#fff;margin-top:1rem">
@@ -546,10 +593,7 @@ a:hover{color:#ff4f5a}
   </p>
   <br>
   <button class="button" onclick="reloadPage()">
-    Go Back
-    <svg fill="currentColor" viewBox="0 0 24 24" class="btn-icon">
-      <path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-4.28 10.28a.75.75 0 000-1.06l-3 3a.75.75 0 001.06 1.06l1.72-1.72V15.75a.75.75 0 001.5 0v-5.69l1.72 1.72a.75.75 0 001.06-1.06l-3-3z" fill-rule="evenodd"></path>
-    </svg>
+    ← Go Back
   </button>
 </div>
 
@@ -559,11 +603,11 @@ a:hover{color:#ff4f5a}
 <div class="subtitle">Indie games</div>
 
 <div class="version-row">
-  Website Version: <span class="badge">v2.0<span></span></span>
+  Website Version: <span class="badge">v3.0<span></span></span>
 </div>
 
 <p>Welcome to Exoticly, our company where we build code, tools & indie games.</p>
-<p><b>At Exoticly© we build Indie games and digital tools mainly focused on performance and gaming!</b></p>
+<p><b>At Exoticly we build Indie games and digital tools mainly focused on performance and gaming!</b></p>
 
 <!-- ══════════════ SOCIAL MEDIA ══════════════ -->
 <div class="section">
@@ -615,9 +659,9 @@ a:hover{color:#ff4f5a}
 <div class="section">
   <div class="section-title">Faded</div>
   <p>
-    Faded is a pixel RPG with a deep and mysterious story.<br><br>
+    Faded is a pixel RPG with an cinematic story.<br><br>
     Explore the world, forge bonds with unforgettable characters, and lose yourself in the original soundtrack as you carve your own path.<br><br>
-    Every decision you make shapes the narrative — multiple branching paths lead to entirely different endings, making every playthrough unique.<br><br>
+    Every decision you make shapes the narrative, multiple branching paths lead to entirely different endings, making every playthrough unique.<br><br>
     Faded is currently in early development, and we are actively searching for Beta Testers!
   </p>
   <p style="font-size:1rem;color:#aaa;margin-top:0.5rem">Interested in testing the game before launch? Apply for free!</p>
@@ -651,7 +695,7 @@ a:hover{color:#ff4f5a}
       </div>
       <div>
         <span class="check-title">High Quality</span><br>
-        Everything we make is self-made, which takes hours or even days — far more effort than relying on templates or free assets.
+        Everything we make is self-made, which takes hours or even days, far more effort than relying on templates or free assets.
       </div>
     </div>
 
@@ -683,7 +727,7 @@ a:hover{color:#ff4f5a}
       </div>
       <div>
         <span class="check-title">Secure</span><br>
-        Our products contain absolutely no malware. Some antivirus tools may flag them — feel free to test in a virtual machine or scan with any software you trust!
+        Our products contain absolutely no malware. Some antivirus tools may flag them, feel free to test in a virtual machine or scan with any software you trust!
       </div>
     </div>
 
@@ -718,6 +762,7 @@ a:hover{color:#ff4f5a}
             </svg>
           </div>
           <div class="leader-name">Exo</div>
+          <div class="leader-role">Founder · Main Developer</div>
         </div>
         <div class="flip-card-back">
           <p class="description">
@@ -736,6 +781,7 @@ a:hover{color:#ff4f5a}
             </svg>
           </div>
           <div class="leader-name">reaL</div>
+          <div class="leader-role">Story Writer · Pixel Artist</div>
         </div>
         <div class="flip-card-back">
           <p class="description">
@@ -839,12 +885,6 @@ a:hover{color:#ff4f5a}
   </div>
 </div>
 
-<!-- ══════════════ WINGDINGS ══════════════ -->
-<div class="wingdings">
-  <span>❄︎⚐︎❄︎⚐︎</span>
-  <span>💣︎⚐︎☠︎⚐︎</span>
-  <span>💣︎✌︎👎︎</span>
-</div>
 
 <br><br>
 
@@ -877,27 +917,37 @@ document.getElementById('mode-toggle').addEventListener('change', function() {
 
 // ── TESTER PAGE ──
 function showTesterPage() {
-  const ls = document.getElementById('loading-screen-clone');
-  // show loading overlay for 3s first
   const overlay = document.createElement('div');
   overlay.style.cssText = 'position:fixed;inset:0;background:#000;z-index:7999;display:flex;align-items:center;justify-content:center;flex-direction:column';
-  overlay.innerHTML = document.getElementById('loading-screen') ? '' : '';
 
-  const lc = document.createElement('div');
-  lc.innerHTML = `<div style="display:flex;width:8rem;height:8rem;justify-content:center;align-items:center;position:relative;flex-direction:column;">
-    <div style="z-index:-1;display:flex;position:absolute;width:8rem;height:8rem;align-items:center;justify-content:center;">
-      <div style="width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at center,black 25%,white 35%,white 100%);box-shadow:0 0 2rem #c2babb;display:flex;align-items:center;justify-content:center;"></div>
-    </div>
-  </div>`;
-  overlay.appendChild(lc);
+  // Clone the full loading screen content
+  overlay.innerHTML = `
+    <div class="loader">
+      <div class="blackhole">
+        <div class="blackhole-circle"></div>
+        <div class="blackhole-disc"></div>
+      </div>
+      <div class="curve">
+        <svg viewBox="0 0 500 500">
+          <path id="overlay-path" d="M73.2,148.6c4-6.1,65.5-96.8,178.6-95.6c111.3,1.2,170.8,90.3,175.1,97"></path>
+          <text width="500">
+            <textPath xlink:href="#overlay-path">loading...</textPath>
+          </text>
+        </svg>
+      </div>
+    </div>`;
   document.body.appendChild(overlay);
 
   setTimeout(() => {
-    overlay.remove();
-    const tp = document.getElementById('tester-page');
-    tp.classList.add('show');
-    requestAnimationFrame(() => tp.classList.add('visible'));
-    document.body.style.overflow = 'hidden';
+    overlay.style.opacity = '0';
+    overlay.style.transition = 'opacity 0.5s';
+    setTimeout(() => {
+      overlay.remove();
+      const tp = document.getElementById('tester-page');
+      tp.classList.add('show');
+      requestAnimationFrame(() => tp.classList.add('visible'));
+      document.body.style.overflow = 'hidden';
+    }, 500);
   }, 3000);
 }
 
