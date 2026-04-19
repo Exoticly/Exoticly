@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1037,21 +1036,42 @@ const db = getFirestore(app);
 const ref = doc(db, "stats", "views");
 
 async function addView() {
-  const snap = await getDoc(ref);
+  const now = Date.now();
 
-  if (!snap.exists()) {
-    await setDoc(ref, { count: 1 });
-  } else {
-    await updateDoc(ref, {
-      count: increment(1)
-    });
+  //  get last visit time
+  const lastVisit = localStorage.getItem("lastVisit");
+
+  //  cooldown (in milliseconds)
+  const cooldown = 2000; // 2 seconds
+
+  let shouldCount = true;
+
+  if (lastVisit && (now - lastVisit) < cooldown) {
+    shouldCount = false; // too fast → ignore
   }
 
-  const updated = await getDoc(ref);
+  // also block multiple counts in same session
+  if (sessionStorage.getItem("viewed")) {
+    shouldCount = false;
+  }
 
-  // 👇 THIS IS THE IMPORTANT LINE FOR YOUR UI
+  if (shouldCount) {
+    try {
+      await updateDoc(ref, {
+        count: increment(1)
+      });
+    } catch {
+      await setDoc(ref, { count: 1 });
+    }
+
+    sessionStorage.setItem("viewed", "true");
+    localStorage.setItem("lastVisit", now);
+  }
+
+  const snap = await getDoc(ref);
+
   document.getElementById("view-count").innerText =
-    updated.data().count;
+    snap.data().count;
 }
 
 addView();
